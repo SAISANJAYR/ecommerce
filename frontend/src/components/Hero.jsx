@@ -1,5 +1,8 @@
 import React from 'react'
 import { assets } from '../assets/assets'
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css'; // Import default styles for the carousel
+
 
 const Hero = () => {
   return (
@@ -19,9 +22,28 @@ const Hero = () => {
             </div>
       </div>
       {/* Hero Right Side */}
-      <img className='w-full sm:w-1/2' src={assets.hero_img} alt="" />
-    </div>
-  )
-}
 
-export default Hero
+      <div className="w-1/2 p-4 bg-[#414141]">
+        <Carousel autoPlay infiniteLoop showThumbs={false} showStatus={false}>
+          <div>
+            <img className='w-full sm:w-1/2' src={assets.hero_img} alt="" />
+            {/* <p className="legend">Image 1</p> */}
+          </div>
+          <div>
+            <img className='w-full sm:w-1/2' src={assets.hero_img} alt="" />
+            {/* <p className="legend">Image 2</p> */}
+          </div>
+          <div>
+            <img className='w-full sm:w-1/2' src={assets.hero_img} alt="" />
+            {/* <p className="legend">Image 3</p> */}
+          </div>
+        </Carousel>
+      </div>
+
+      {/* <img className='w-full sm:w-1/2' src={assets.hero_img} alt="" /> */}
+
+    </div>
+  );
+};
+
+export default Hero;
